@@ -1,0 +1,29 @@
+.container{
+  display: block;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 70px auto;
+}
+
+.title{
+  font-family: Chic Avenue;
+  font-size: 60px;
+}
+
+.title2{
+  font-family: Playfair Display;
+  font-size: 30px;
+}
+
+.paragraph{
+ font-family: Playfair Display;
+ font-size: 20px;
+}
+
+.coloredText{
+ font-weight: bold;
+ color: #FF6701;
+}

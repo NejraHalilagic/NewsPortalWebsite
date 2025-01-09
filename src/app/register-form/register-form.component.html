@@ -1,0 +1,47 @@
+<div class="container">
+  <header class="header">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsiveness -->
+    <h1 class="site-title">Register</h1>
+  </header>
+
+  <div class="register-form">
+    <form (ngSubmit)="onSubmit()">
+      <div id="firstNameMessage" class="message"></div>
+      <label for="firstName">First name:</label><br>
+      <input type="text" id="firstName" name="firstName" [(ngModel)]="firstName"><br><br>
+
+      <div id="lastNameMessage" class="message"></div>
+      <label for="lastName">Last name:</label><br>
+      <input type="text" id="lastName" name="lastName" [(ngModel)]="lastName"><br><br>
+
+      <div id="userNameMessage" class="message"></div>
+      <label for="userName">User name:</label><br>
+      <input type="text" id="userName" name="userName" [(ngModel)]="userName"><br><br>
+
+      <div id="emailMessage" class="message"></div>
+      <label for="email">Email:</label><br>
+      <input type="text" id="email" name="email" [(ngModel)]="email"><br><br>
+
+      <div id="passwordMessage" class="message"></div>
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" [(ngModel)]="password"><br><br>
+
+      <div id="confirmPasswordMessage" class="message"></div>
+      <label for="confirmPassword">Confirm password:</label><br>
+      <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword"><br><br>
+
+      <input type="submit" value="Register" class="submitButton">
+      <!--<input type="submit" formaction="/action_page2.php" value="Submit as Admin">-->
+    </form>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal" *ngIf="isSuccessModalVisible">
+    <div class="modal-content">
+      <p>Registration successful!</p>
+      <button (click)="onModalOk()">OK</button>
+    </div>
+  </div>
+
+</div>
+

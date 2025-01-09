@@ -1,0 +1,21 @@
+<div class="newsCard">
+  <div *ngIf="data && data.length > 0">
+    <div *ngFor="let item of data" class="newsItem">
+      <img class="image" [src]="item.image" alt="News Image" />
+      <div class="textContainer">
+        <a [routerLink]="['/news-content', item.newsID]" class="cardLink">
+        <h1 class="newsTitle">{{ item.title }}</h1>
+        <p>by <span style="color: #FF6701;">{{ item.authorsName }}</span></p>
+        <p>{{ item.publishedAt }}</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+  <div *ngIf="!data || data.length === 0">
+    <p>No news available.</p>
+  </div>
+
+</div>

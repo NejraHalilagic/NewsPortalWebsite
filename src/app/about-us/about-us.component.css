@@ -1,0 +1,49 @@
+.container1, .container2{
+  display: block;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 70px auto;
+}
+
+.container3, .container4, .container5, .container6{
+ display: block;
+ align-items: center;
+ text-align: left;
+ gap: 20px;
+ width: 90%;
+ max-width: 1200px;
+ margin: 50px auto; /* Centers the container and adds spacing */
+ background-color: white;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ padding: 50px;
+ box-sizing: border-box;
+ transition: all 0.3s ease;
+}
+
+.container3:hover, .container4:hover, .container5:hover, .container6:hover {
+ transform: translateY(-20px);
+ box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.aboutTitle{
+  font-family: Chic Avenue;
+  font-size: 60px;
+}
+
+.aboutTitle2{
+  font-family: Playfair Display;
+  font-size: 30px;
+}
+
+.paragraph{
+ font-family: Playfair Display;
+ font-size: 20px;
+}
+
+.teamPhoto{
+margin: 10px auto;
+}
+

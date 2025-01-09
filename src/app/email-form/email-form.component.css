@@ -1,0 +1,148 @@
+.title-section{
+  background-color: black;
+  width: 100%;
+  height: 140px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  justify-content: left;
+  padding: 0px;
+}
+
+.site-title{
+  color: var(--background-color);
+  font-size: 90px;
+  font-family: Chic Avenue;
+  margin-left: 250px;
+  margin-top: 10px;
+}
+
+@media (max-width: 600px) {
+    .site-title, .title-section {
+        font-size: 18px;
+    }
+  }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto; /* Centers the container and adds spacing */
+    background-color: white;
+    font-family: Playfair Display;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.paragraph1 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin-top: 0;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.text {
+  flex: 1; /* Allows text content to take up available space */
+}
+
+.image img{
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.custom-line {
+  border: none;
+  height: 2px;
+  background-color: #ccc;
+  margin-top: 50px;
+}
+
+.information {
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.subscription-form {
+  display: block;
+  margin: 100px;
+  font-size:20px;
+}
+
+
+#email{
+  width: 100%;
+  max-width: 600px;
+  height:40px;
+  margin: 20px;
+}
+
+
+
+.button{
+  background:black;
+  color:white;
+  width:170px;
+  height:55px;
+  border-radius:10px;
+  font-size:20px;
+  font-family: Playfair Display;
+}
+
+.responseMessage{
+margin-left: 230px;
+margin-top: -60px;
+
+}
+
+.cancel-subscription-paragraph{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 50px auto;
+  text-align:justify;
+}
+
+@media (max-width: 600px) {
+    .cancel-subscription-paragraph {
+        font-size: 18px;
+    }
+  }
+
+.footer {
+  margin: 20px auto;
+  padding: 20px 15px;
+  text-align: center;
+  font-family: Playfair Display;
+  font-size: 14px;
+  color: #333;
+}
+
+.footer-content p {
+  margin: 0;
+  padding: 5px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0073e6;
+  font-weight: normal;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #005bb5;
+}
+

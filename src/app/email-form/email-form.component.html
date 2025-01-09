@@ -1,0 +1,70 @@
+<header class="header">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsiveness -->
+    <div class="title-section">
+      <h1 class="site-title">ARTnews</h1>
+    </div>
+</header>
+
+<div class="container">
+
+  <div class="paragraph1">
+  <div class="text">
+    <h2>Subscribe to Art in America</h2>
+      <h3>Print Edition</h3>
+        <p>The world's premiere art magazine provides in-depth coverage of the global, and often controversial, art scene. Every issue contains articles on respected and rising talents, and reviews of current exhibitions around the world. Your subscription includes print delivery and the ARTnews Top 200 Collectors issue.</p>
+  </div>
+
+  <div class="image">
+    <img src="/magazinePhoto.JPG" alt="Magazine" class="magazinePhoto" />
+  </div>
+  </div>
+
+  <hr class="custom-line">
+
+  <div class="information">
+    <h3>Subscriber Mailing Information</h3>
+  </div>
+
+
+  <div class="subscription-form">
+
+    <form (ngSubmit)="submitEmail()" #emailForm="ngForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required /><br /><br />
+
+      <button type="submit" [disabled]="!emailForm.valid" class="button">Subscribe</button>
+    </form>
+
+    <div class="responseMessage" *ngIf="responseMessage">
+      <p>{{ responseMessage }}</p>
+    </div>
+  </div>
+
+
+
+  <hr class="custom-line">
+
+<div class="cancel-subscription-paragraph">
+  <p>UNCONDITIONAL GUARANTEE: You can cancel at any time during your subscription and receive a full refund on any un-mailed copies by calling 800-925-8059 (US & Canada), 515-243-3273 (International) or visting Customer Care.
+    We reserve the right to change the number of issues in a subscription term, including discontinuing any format, make substitutions and/or modify the manner in which the subscription is distributed.
+    Your subscription is subject to our Terms of Use and our Privacy Policy.
+    If the Post Office alerts us that your magazine is undeliverable, we have no further obligation unless we receive a corrected address within one year.</p>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 Art Media, LLC. All Rights Reserved.</p>
+      <div class="footer-links">
+        <a href="#contact">Contact Us</a>
+        <a href="#advertise">Advertise</a>
+        <a href="#terms">Terms Of Use</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#california-privacy">Your California Privacy Rights</a>
+      </div>
+    </div>
+  </footer>
+
+
+
+

@@ -1,0 +1,19 @@
+<div class="news-content">
+  <div *ngIf="data">
+    <div class="newsItem">
+      <h1 class="title">{{ data.title }}</h1>
+      <div class="paragraphs">
+      <p class="authorsName">by <span style="color: #FF6701;">{{ data.authorsName }}</span></p>
+      <p class="publishedAt">{{ data.publishedAt }}</p>
+      </div>
+      <div class="imageContainer">
+      <img class="image" [src]="data.image" alt="News Image" />
+      </div>
+      <p class="content">{{ data.content }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="!data">
+    <p>No news available.</p>
+  </div>
+</div>

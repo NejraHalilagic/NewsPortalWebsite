@@ -1,0 +1,127 @@
+<div class="buttonContainer">
+  <button class="buttonLook" (click)="loadUsers()">Users</button>
+</div>
+<div *ngIf="displayUsers">
+  <h2 class="chosenRole">Users</h2>
+  <table class="data-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Crated at</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.ID }}</td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.createdAt }}</td>
+      <td>
+        <button class="action-button edit-button" (click)="editUser(user.ID)">Edit</button>
+        <button class="action-button delete-button" (click)="deleteUser(user.ID)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="buttonContainer">
+<button class="buttonLook" (click)="loadNews()">News</button>
+</div>
+<div *ngIf="displayNews">
+  <h2 class="chosenRole">News</h2>
+  <table class="data-table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Content</th>
+      <th>Authors name</th>
+      <th>Image URL</th>
+      <th>Published at</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let article of news">
+      <td>{{ article.newsID }}</td>
+      <td>{{ article.title }}</td>
+      <td>{{ article.content }}</td>
+      <td>{{ article.authorsName }}</td>
+      <td>{{ article.image }}</td>
+      <td>{{ article.publishedAt }}</td>
+      <td>
+        <button class="action-button edit-button" (click)="editNews(article.newsID)">Edit</button>
+        <button class="action-button delete-button" (click)="deleteNews(article.newsID)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="isSuccessModalVisible" class="modal-backdrop">
+  <div class="modal">
+    <h3>Succesfully deleted!</h3>
+    <button (click)="onModalOk()">Continue</button>
+  </div>
+</div>
+
+<!-- Edit User Modal -->
+<div *ngIf="isEditModalVisible" class="modal-overlay">
+  <div class="modal">
+    <h2>Edit User</h2>
+    <form>
+      <label for="editFirstName">First Name:</label>
+      <input id="editFirstName" [(ngModel)]="selectedUser.firstName" name="firstName" /><br><br>
+
+      <label for="editLastName">Last Name:</label>
+      <input id="editLastName" [(ngModel)]="selectedUser.lastName" name="lastName" /><br><br>
+
+      <label for="editUserName">User name:</label>
+      <input id="editUserName" [(ngModel)]="selectedUser.userName" name="userName" /><br><br>
+
+      <label for="editEmail">Email:</label>
+      <input id="editEmail" [(ngModel)]="selectedUser.email" name="email" /><br><br>
+
+      <label for="editCreatedAt">Created at:</label>
+      <input id="editCreatedAt" [(ngModel)]="selectedUser.createdAt" name="createdAt" /><br><br>
+
+      <button type="button" (click)="updateUser()">OK</button>
+      <button type="button" (click)="closeEditModal()">Cancel</button>
+    </form>
+  </div>
+</div>
+
+
+<div *ngIf="isEditModalVisible2" class="modal-overlay">
+  <div class="modal">
+    <h2>Edit News</h2>
+    <form>
+      <label for="editTitle">Title:</label>
+      <input id="editTitle" [(ngModel)]="selectedNews.title" name="title" /><br /><br />
+
+      <label for="editContent">Content:</label>
+      <input id="editContent" [(ngModel)]="selectedNews.content" name="content" /><br /><br />
+
+      <label for="editAuthorsName">Author's Name:</label>
+      <input id="editAuthorsName" [(ngModel)]="selectedNews.authorsName" name="authorsName" /><br /><br />
+
+      <label for="editImage">Image URL:</label>
+      <input id="editImage" [(ngModel)]="selectedNews.image" name="image" /><br /><br />
+
+      <label for="editPublishedAt">Published At:</label>
+      <input id="editPublishedAt" [(ngModel)]="selectedNews.publishedAt" name="publishedAt" /><br /><br />
+
+      <button type="button" (click)="updateNews()">OK</button>
+      <button type="button" (click)="closeEditModal()">Cancel</button>
+    </form>
+  </div>
+</div>

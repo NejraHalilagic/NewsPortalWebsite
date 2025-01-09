@@ -1,0 +1,56 @@
+<div class="container">
+  <header class="header">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsiveness -->
+
+      <h1 class="site-title">Log in</h1>
+
+  </header>
+
+  <div class="login-form">
+    <form (ngSubmit)="onSubmit()">
+      <div id="message" class="message"></div>
+      <label for="userName">User name:</label><br>
+      <input type="text" id="userName" name="userName" [(ngModel)]="userName"><br><br>
+
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password" [(ngModel)]="password"><br><br>
+
+      <a href ="javascript:void(0)" class="changePass" (click)="openModal()">Change password</a>
+
+      <input type="submit" value="Log in" class="submitButton">
+      <!--<input type="submit" formaction="/action_page2.php" value="Submit as Admin">-->
+    </form>
+  </div>
+
+  <div *ngIf="isModalVisible" class="modal-overlay">
+    <div class="modal">
+      <h2>Change Password</h2>
+      <form (ngSubmit)="submitPassword()">
+        <div id="modalMessage" class="message"></div>
+        <label for="userNameForValidation">User name:</label>
+        <input type="text" id="userNameForValidation" [(ngModel)]="userNameForValidation" name="userNameForValidation" required /><br><br>
+
+        <label for="currentPassword">Current Password:</label>
+        <input type="password" id="currentPassword" [(ngModel)]="currentPassword" name="currentPassword" required /><br><br>
+
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required /><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required /><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="button" (click)="closeModal()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <div *ngIf="isSuccessModalVisible" class="modal-backdrop">
+    <div class="modal">
+      <h3>Login Successful</h3>
+      <p>Click OK to continue to the home page.</p>
+      <button (click)="onModalOk()">OK</button>
+    </div>
+  </div>
+
+</div>
